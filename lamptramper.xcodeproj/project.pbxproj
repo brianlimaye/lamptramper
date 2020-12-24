@@ -7,8 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B438FC5025944DFB00592BEF /* tanpixelbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = B438FC4F25944DFB00592BEF /* tanpixelbutton.png */; };
+		B438FC57259455CA00592BEF /* gameoverboard.png in Resources */ = {isa = PBXBuildFile; fileRef = B438FC55259455CA00592BEF /* gameoverboard.png */; };
+		B438FC5C2594563600592BEF /* gameoverreplay.png in Resources */ = {isa = PBXBuildFile; fileRef = B438FC5B2594563600592BEF /* gameoverreplay.png */; };
+		B438FC6C259459C000592BEF /* OrangeKid-Regular.ps in Resources */ = {isa = PBXBuildFile; fileRef = B438FC6B259459C000592BEF /* OrangeKid-Regular.ps */; };
+		B4495DA025900A8E00B16337 /* KarmaticArcade.ps in Resources */ = {isa = PBXBuildFile; fileRef = B4495D9F25900A8E00B16337 /* KarmaticArcade.ps */; };
+		B4495DAA25900E3600B16337 /* Thirteen-Pixel-Fonts.ps in Resources */ = {isa = PBXBuildFile; fileRef = B4495DA925900E3600B16337 /* Thirteen-Pixel-Fonts.ps */; };
+		B4495DB2259012B700B16337 /* HABESHAPIXELS-Bold.ps in Resources */ = {isa = PBXBuildFile; fileRef = B4495DB1259012B700B16337 /* HABESHAPIXELS-Bold.ps */; };
+		B44A82582591911D00025FAA /* orangepixelbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = B44A82572591911D00025FAA /* orangepixelbutton.png */; };
+		B44A825D2591957E00025FAA /* pixel-hand.png in Resources */ = {isa = PBXBuildFile; fileRef = B44A825C2591957E00025FAA /* pixel-hand.png */; };
+		B44A82682591A29600025FAA /* BitPap.ps in Resources */ = {isa = PBXBuildFile; fileRef = B44A82672591A29600025FAA /* BitPap.ps */; };
 		B45724B7258EFF5C0066FD2E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45724B6258EFF5C0066FD2E /* AppDelegate.swift */; };
-		B45724B9258EFF5C0066FD2E /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = B45724B8258EFF5C0066FD2E /* GameScene.sks */; };
 		B45724BB258EFF5C0066FD2E /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = B45724BA258EFF5C0066FD2E /* Actions.sks */; };
 		B45724BD258EFF5C0066FD2E /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45724BC258EFF5C0066FD2E /* GameScene.swift */; };
 		B45724BF258EFF5C0066FD2E /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45724BE258EFF5C0066FD2E /* GameViewController.swift */; };
@@ -16,6 +25,26 @@
 		B45724C4258EFF5D0066FD2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B45724C3258EFF5D0066FD2E /* Assets.xcassets */; };
 		B45724CF258EFF5D0066FD2E /* lamptramperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45724CE258EFF5D0066FD2E /* lamptramperTests.swift */; };
 		B45724DA258EFF5D0066FD2E /* lamptramperUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45724D9258EFF5D0066FD2E /* lamptramperUITests.swift */; };
+		B4572519258F089C0066FD2E /* lamp3.png in Resources */ = {isa = PBXBuildFile; fileRef = B4572513258F089C0066FD2E /* lamp3.png */; };
+		B457251A258F089C0066FD2E /* lamp1.png in Resources */ = {isa = PBXBuildFile; fileRef = B4572514258F089C0066FD2E /* lamp1.png */; };
+		B457251B258F089C0066FD2E /* lamp2.png in Resources */ = {isa = PBXBuildFile; fileRef = B4572515258F089C0066FD2E /* lamp2.png */; };
+		B457251C258F089C0066FD2E /* lamp4.png in Resources */ = {isa = PBXBuildFile; fileRef = B4572516258F089C0066FD2E /* lamp4.png */; };
+		B457251D258F089C0066FD2E /* lamp5.png in Resources */ = {isa = PBXBuildFile; fileRef = B4572517258F089C0066FD2E /* lamp5.png */; };
+		B457251E258F089C0066FD2E /* lamp6.png in Resources */ = {isa = PBXBuildFile; fileRef = B4572518258F089C0066FD2E /* lamp6.png */; };
+		B4572524258F08AC0066FD2E /* trampergrounds.png in Resources */ = {isa = PBXBuildFile; fileRef = B4572522258F08AC0066FD2E /* trampergrounds.png */; };
+		B4572525258F08AC0066FD2E /* tramperbackg.png in Resources */ = {isa = PBXBuildFile; fileRef = B4572523258F08AC0066FD2E /* tramperbackg.png */; };
+		B49C539B2590056300C77170 /* HomeScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49C539A2590056300C77170 /* HomeScene.swift */; };
+		B4AC71082594027700CA93B1 /* MinercraftoryRegular.ps in Resources */ = {isa = PBXBuildFile; fileRef = B4AC71072594027700CA93B1 /* MinercraftoryRegular.ps */; };
+		B4AC71102594107600CA93B1 /* WheatonCapitals-Regular.ps in Resources */ = {isa = PBXBuildFile; fileRef = B4AC710F2594107600CA93B1 /* WheatonCapitals-Regular.ps */; };
+		B4C11DB125901B4B00EE2302 /* pixelbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = B4C11DB025901B4B00EE2302 /* pixelbutton.png */; };
+		B4C11DB62590314900EE2302 /* yellowpixelbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = B4C11DB52590314900EE2302 /* yellowpixelbutton.png */; };
+		B4C11DBB259039BD00EE2302 /* redpixelbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = B4C11DBA259039BC00EE2302 /* redpixelbutton.png */; };
+		B4F8795B2591A7E000DA13FF /* lavenderletteri.png in Resources */ = {isa = PBXBuildFile; fileRef = B4F879552591A7E000DA13FF /* lavenderletteri.png */; };
+		B4F8795C2591A7E000DA13FF /* blueletteri.png in Resources */ = {isa = PBXBuildFile; fileRef = B4F879562591A7E000DA13FF /* blueletteri.png */; };
+		B4F8795D2591A7E000DA13FF /* letteri.png in Resources */ = {isa = PBXBuildFile; fileRef = B4F879572591A7E000DA13FF /* letteri.png */; };
+		B4F8795E2591A7E000DA13FF /* tanletteri.png in Resources */ = {isa = PBXBuildFile; fileRef = B4F879582591A7E000DA13FF /* tanletteri.png */; };
+		B4F8795F2591A7E000DA13FF /* pinkletteri.png in Resources */ = {isa = PBXBuildFile; fileRef = B4F879592591A7E000DA13FF /* pinkletteri.png */; };
+		B4F879602591A7E000DA13FF /* whiteletteri.png in Resources */ = {isa = PBXBuildFile; fileRef = B4F8795A2591A7E000DA13FF /* whiteletteri.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,9 +65,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B438FC4F25944DFB00592BEF /* tanpixelbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tanpixelbutton.png; sourceTree = "<group>"; };
+		B438FC55259455CA00592BEF /* gameoverboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gameoverboard.png; sourceTree = "<group>"; };
+		B438FC5B2594563600592BEF /* gameoverreplay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gameoverreplay.png; path = ../../../../../../Downloads/gameoverreplay.png; sourceTree = "<group>"; };
+		B438FC6B259459C000592BEF /* OrangeKid-Regular.ps */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OrangeKid-Regular.ps"; sourceTree = "<group>"; };
+		B4495D9F25900A8E00B16337 /* KarmaticArcade.ps */ = {isa = PBXFileReference; lastKnownFileType = file; path = KarmaticArcade.ps; sourceTree = "<group>"; };
+		B4495DA925900E3600B16337 /* Thirteen-Pixel-Fonts.ps */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Thirteen-Pixel-Fonts.ps"; sourceTree = "<group>"; };
+		B4495DB1259012B700B16337 /* HABESHAPIXELS-Bold.ps */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HABESHAPIXELS-Bold.ps"; sourceTree = "<group>"; };
+		B44A82572591911D00025FAA /* orangepixelbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = orangepixelbutton.png; sourceTree = "<group>"; };
+		B44A825C2591957E00025FAA /* pixel-hand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pixel-hand.png"; sourceTree = "<group>"; };
+		B44A82672591A29600025FAA /* BitPap.ps */ = {isa = PBXFileReference; lastKnownFileType = file; path = BitPap.ps; sourceTree = "<group>"; };
 		B45724B3258EFF5C0066FD2E /* lamptramper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lamptramper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B45724B6258EFF5C0066FD2E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B45724B8258EFF5C0066FD2E /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		B45724BA258EFF5C0066FD2E /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
 		B45724BC258EFF5C0066FD2E /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		B45724BE258EFF5C0066FD2E /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -51,6 +89,26 @@
 		B45724D5258EFF5D0066FD2E /* lamptramperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = lamptramperUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B45724D9258EFF5D0066FD2E /* lamptramperUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lamptramperUITests.swift; sourceTree = "<group>"; };
 		B45724DB258EFF5D0066FD2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B4572513258F089C0066FD2E /* lamp3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lamp3.png; sourceTree = "<group>"; };
+		B4572514258F089C0066FD2E /* lamp1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lamp1.png; sourceTree = "<group>"; };
+		B4572515258F089C0066FD2E /* lamp2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lamp2.png; sourceTree = "<group>"; };
+		B4572516258F089C0066FD2E /* lamp4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lamp4.png; sourceTree = "<group>"; };
+		B4572517258F089C0066FD2E /* lamp5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lamp5.png; sourceTree = "<group>"; };
+		B4572518258F089C0066FD2E /* lamp6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lamp6.png; sourceTree = "<group>"; };
+		B4572522258F08AC0066FD2E /* trampergrounds.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = trampergrounds.png; sourceTree = "<group>"; };
+		B4572523258F08AC0066FD2E /* tramperbackg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tramperbackg.png; sourceTree = "<group>"; };
+		B49C539A2590056300C77170 /* HomeScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScene.swift; sourceTree = "<group>"; };
+		B4AC71072594027700CA93B1 /* MinercraftoryRegular.ps */ = {isa = PBXFileReference; lastKnownFileType = file; path = MinercraftoryRegular.ps; sourceTree = "<group>"; };
+		B4AC710F2594107600CA93B1 /* WheatonCapitals-Regular.ps */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WheatonCapitals-Regular.ps"; sourceTree = "<group>"; };
+		B4C11DB025901B4B00EE2302 /* pixelbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pixelbutton.png; sourceTree = "<group>"; };
+		B4C11DB52590314900EE2302 /* yellowpixelbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yellowpixelbutton.png; sourceTree = "<group>"; };
+		B4C11DBA259039BC00EE2302 /* redpixelbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redpixelbutton.png; sourceTree = "<group>"; };
+		B4F879552591A7E000DA13FF /* lavenderletteri.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lavenderletteri.png; sourceTree = "<group>"; };
+		B4F879562591A7E000DA13FF /* blueletteri.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueletteri.png; sourceTree = "<group>"; };
+		B4F879572591A7E000DA13FF /* letteri.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = letteri.png; sourceTree = "<group>"; };
+		B4F879582591A7E000DA13FF /* tanletteri.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tanletteri.png; sourceTree = "<group>"; };
+		B4F879592591A7E000DA13FF /* pinkletteri.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pinkletteri.png; sourceTree = "<group>"; };
+		B4F8795A2591A7E000DA13FF /* whiteletteri.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteletteri.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,12 +160,14 @@
 			isa = PBXGroup;
 			children = (
 				B45724B6258EFF5C0066FD2E /* AppDelegate.swift */,
-				B45724B8258EFF5C0066FD2E /* GameScene.sks */,
+				B49C539A2590056300C77170 /* HomeScene.swift */,
 				B45724BA258EFF5C0066FD2E /* Actions.sks */,
 				B45724BC258EFF5C0066FD2E /* GameScene.swift */,
 				B45724BE258EFF5C0066FD2E /* GameViewController.swift */,
 				B45724C0258EFF5C0066FD2E /* Main.storyboard */,
 				B45724C3258EFF5D0066FD2E /* Assets.xcassets */,
+				B49C539F2590078000C77170 /* fonts */,
+				B4572512258F08780066FD2E /* assets */,
 				B45724C5258EFF5D0066FD2E /* Info.plist */,
 			);
 			path = lamptramper;
@@ -129,6 +189,49 @@
 				B45724DB258EFF5D0066FD2E /* Info.plist */,
 			);
 			path = lamptramperUITests;
+			sourceTree = "<group>";
+		};
+		B4572512258F08780066FD2E /* assets */ = {
+			isa = PBXGroup;
+			children = (
+				B438FC5B2594563600592BEF /* gameoverreplay.png */,
+				B438FC55259455CA00592BEF /* gameoverboard.png */,
+				B4F879562591A7E000DA13FF /* blueletteri.png */,
+				B4F879552591A7E000DA13FF /* lavenderletteri.png */,
+				B4F879572591A7E000DA13FF /* letteri.png */,
+				B4F879592591A7E000DA13FF /* pinkletteri.png */,
+				B4F879582591A7E000DA13FF /* tanletteri.png */,
+				B4F8795A2591A7E000DA13FF /* whiteletteri.png */,
+				B44A825C2591957E00025FAA /* pixel-hand.png */,
+				B438FC4F25944DFB00592BEF /* tanpixelbutton.png */,
+				B44A82572591911D00025FAA /* orangepixelbutton.png */,
+				B4C11DBA259039BC00EE2302 /* redpixelbutton.png */,
+				B4C11DB52590314900EE2302 /* yellowpixelbutton.png */,
+				B4C11DB025901B4B00EE2302 /* pixelbutton.png */,
+				B4572523258F08AC0066FD2E /* tramperbackg.png */,
+				B4572522258F08AC0066FD2E /* trampergrounds.png */,
+				B4572514258F089C0066FD2E /* lamp1.png */,
+				B4572515258F089C0066FD2E /* lamp2.png */,
+				B4572513258F089C0066FD2E /* lamp3.png */,
+				B4572516258F089C0066FD2E /* lamp4.png */,
+				B4572517258F089C0066FD2E /* lamp5.png */,
+				B4572518258F089C0066FD2E /* lamp6.png */,
+			);
+			path = assets;
+			sourceTree = "<group>";
+		};
+		B49C539F2590078000C77170 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				B438FC6B259459C000592BEF /* OrangeKid-Regular.ps */,
+				B4AC710F2594107600CA93B1 /* WheatonCapitals-Regular.ps */,
+				B4AC71072594027700CA93B1 /* MinercraftoryRegular.ps */,
+				B4495DB1259012B700B16337 /* HABESHAPIXELS-Bold.ps */,
+				B44A82672591A29600025FAA /* BitPap.ps */,
+				B4495DA925900E3600B16337 /* Thirteen-Pixel-Fonts.ps */,
+				B4495D9F25900A8E00B16337 /* KarmaticArcade.ps */,
+			);
+			path = fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,10 +337,38 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4495DA025900A8E00B16337 /* KarmaticArcade.ps in Resources */,
+				B438FC57259455CA00592BEF /* gameoverboard.png in Resources */,
+				B4495DAA25900E3600B16337 /* Thirteen-Pixel-Fonts.ps in Resources */,
+				B44A82682591A29600025FAA /* BitPap.ps in Resources */,
+				B4F8795B2591A7E000DA13FF /* lavenderletteri.png in Resources */,
+				B438FC5025944DFB00592BEF /* tanpixelbutton.png in Resources */,
+				B438FC6C259459C000592BEF /* OrangeKid-Regular.ps in Resources */,
+				B4C11DBB259039BD00EE2302 /* redpixelbutton.png in Resources */,
+				B4F8795E2591A7E000DA13FF /* tanletteri.png in Resources */,
+				B438FC5C2594563600592BEF /* gameoverreplay.png in Resources */,
+				B4C11DB62590314900EE2302 /* yellowpixelbutton.png in Resources */,
+				B4AC71102594107600CA93B1 /* WheatonCapitals-Regular.ps in Resources */,
+				B4572519258F089C0066FD2E /* lamp3.png in Resources */,
+				B4572524258F08AC0066FD2E /* trampergrounds.png in Resources */,
+				B457251B258F089C0066FD2E /* lamp2.png in Resources */,
+				B457251D258F089C0066FD2E /* lamp5.png in Resources */,
+				B4AC71082594027700CA93B1 /* MinercraftoryRegular.ps in Resources */,
+				B4C11DB125901B4B00EE2302 /* pixelbutton.png in Resources */,
+				B457251C258F089C0066FD2E /* lamp4.png in Resources */,
+				B4495DB2259012B700B16337 /* HABESHAPIXELS-Bold.ps in Resources */,
+				B457251E258F089C0066FD2E /* lamp6.png in Resources */,
 				B45724C2258EFF5C0066FD2E /* Main.storyboard in Resources */,
-				B45724B9258EFF5C0066FD2E /* GameScene.sks in Resources */,
 				B45724C4258EFF5D0066FD2E /* Assets.xcassets in Resources */,
+				B4F879602591A7E000DA13FF /* whiteletteri.png in Resources */,
+				B44A82582591911D00025FAA /* orangepixelbutton.png in Resources */,
 				B45724BB258EFF5C0066FD2E /* Actions.sks in Resources */,
+				B4572525258F08AC0066FD2E /* tramperbackg.png in Resources */,
+				B4F8795C2591A7E000DA13FF /* blueletteri.png in Resources */,
+				B4F8795D2591A7E000DA13FF /* letteri.png in Resources */,
+				B44A825D2591957E00025FAA /* pixel-hand.png in Resources */,
+				B457251A258F089C0066FD2E /* lamp1.png in Resources */,
+				B4F8795F2591A7E000DA13FF /* pinkletteri.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,6 +394,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B45724BD258EFF5C0066FD2E /* GameScene.swift in Sources */,
+				B49C539B2590056300C77170 /* HomeScene.swift in Sources */,
 				B45724BF258EFF5C0066FD2E /* GameViewController.swift in Sources */,
 				B45724B7258EFF5C0066FD2E /* AppDelegate.swift in Sources */,
 			);
@@ -362,7 +494,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -417,7 +549,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -435,6 +567,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QEXVU7NBU9;
 				INFOPLIST_FILE = lamptramper/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -454,6 +587,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QEXVU7NBU9;
 				INFOPLIST_FILE = lamptramper/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
