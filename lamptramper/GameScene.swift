@@ -29,12 +29,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var scoreDisplay: SKLabelNode = SKLabelNode()
     var ISprites: [SKSpriteNode] = [SKSpriteNode]()
     var currentTexture: SKSpriteNode = SKSpriteNode()
+    var fillerNode: SKSpriteNode = SKSpriteNode()
     var textureSize: CGSize = CGSize()
     var initialSize: CGSize = CGSize()
     var currentScore: Int = 0
     var currentJumpCount: Int = 0
     var hasReturned: Bool = true
     var isLanding: Bool = false
+    var currentSpeed: CGFloat = 5
     
     var lampShift: SKAction = SKAction()
     var lampAnimation: SKAction = SKAction()
@@ -62,6 +64,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     private func resetModifiers() {
         
         currentScore = 0
+        currentSpeed = 5.0
         currentJumpCount = 0
         hasReturned = true
         isLanding = false
@@ -144,7 +147,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let shiftSequencer = SKAction.sequence([rightShift, action, leftShift, action])
         
         let lampAnimRepeater = SKAction.repeatForever(jumpSequencer)
-        lampShift = SKAction.repeatForever(shiftSequencer)
+        lampShift = SKAction.repeat(shiftSequencer, count: 1)
         
         lampSprite.position = CGPoint(x: -self.frame.size.width / 2.5, y: startingYPos)
         lampSprite.size = CGSize(width: lampSprite.size.width * (self.frame.size.width * 0.00025), height: lampSprite.size.height * (self.frame.size.width * 0.00025))
@@ -330,7 +333,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         highScoreText.fontSize = self.frame.size.width * 0.0225
         highScoreText.fontColor = .white
         highScoreText.text = "Best: " + String(currentScore)
-        highScoreText.position = CGPoint(x: (scoreHolder.position.x + scoreHolder.frame.width) / 3.57, y: (scoreHolder.position.y - scoreHolder.frame.height) / 5.75)
+        highScoreText.position = CGPoint(x: (scoreHolder.position.x + scoreHolder.frame.width) / 3.55, y: (scoreHolder.position.y - scoreHolder.frame.height) / 5.75)
         
         scoreText.zPosition = 6
         highScoreText.zPosition = 6
@@ -346,7 +349,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let boardButton: SKSpriteNode = SKSpriteNode(imageNamed: "gameoverboard")
         boardButton.name = "leaderboard"
         boardButton.size = CGSize(width: boardButton.size.width * (self.frame.size.width * 0.000275), height: boardButton.size.height * (self.frame.size.width * 0.000275))
-        boardButton.position = CGPoint(x: replayButton.position.x / 1.5, y: highScoreText.position.y * 5)
+        boardButton.position = CGPoint(x: replayButton.position.x / 1.5, y: -self.frame.size.height / 3.2)
         boardButton.isUserInteractionEnabled = false
         
         boardButton.zPosition = 6
@@ -422,9 +425,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     private func drawLetterI() {
-        
-        print("drawing letter I...")
-                
+                        
         var IPos: CGFloat = 0
         
         if(UIDevice.current.userInterfaceIdiom == .phone) {
@@ -449,7 +450,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         currentTexture.size = CGSize(width: currentTexture.size.width * (self.frame.size.width * 0.0004), height: currentTexture.size.height * (self.frame.size.width * 0.0004))
         textureSize = currentTexture.size
         
-        currentTexture.position.x = CGFloat.random(in: -self.frame.size.width / 3 ... self.frame.size.width / 3)
+        currentTexture.position.x = CGFloat.random(in: -self.frame.size.width / 6 ... self.frame.size.width / 6)
         currentTexture.position.y = IPos
         currentTexture.name = "badI"
         currentTexture.anchorPoint = CGPoint(x: 0.5, y: 0)
@@ -462,17 +463,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         currentTexture.physicsBody?.isDynamic = false
         
         currentTexture.zPosition = 5
-        
-        print(currentTexture.size.height)
-        
-        let fillerNode: SKSpriteNode = SKSpriteNode(imageNamed: "letteri")
+                
+        fillerNode = SKSpriteNode(imageNamed: "letteri")
         fillerNode.name = "goodI"
         fillerNode.size = CGSize(width: fillerNode.size.width * (self.frame.size.width * 0.0001), height: fillerNode.size.height * (self.frame.size.width * 0.0001))
         fillerNode.position.x = currentTexture.position.x
         fillerNode.position.y = currentTexture.position.y + (4 * fillerNode.size.height)
         fillerNode.alpha = 0.0
         
-        fillerNode.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: currentTexture.size.width * 0.5, height: currentTexture.size.height / 6), center: CGPoint(x: 0, y: -5))
+        fillerNode.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: currentTexture.size.width * 0.6, height: currentTexture.size.height / 6), center: CGPoint(x: 0, y: 0))
         fillerNode.physicsBody?.affectedByGravity = false
         fillerNode.physicsBody?.categoryBitMask = ColliderType.posI
         fillerNode.physicsBody?.collisionBitMask = ColliderType.lamp
@@ -487,11 +486,48 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     private func startGame() {
         
-        lampSprite.run(lampShift)
+        moveRight()
         initScore()
-        drawLetterI()
     }
+    
+    private func moveLeft() {
+        
+        drawLetterI()
+        if(currentSpeed > 1.5) {
+            
+            currentSpeed *= 0.95
+        }
+    
+        lampSprite.xScale = 1
+        
+        let rightShift = SKAction.moveTo(x: -self.frame.size.width / 2.25, duration: TimeInterval(currentSpeed))
+        
+        let shiftRepeater = SKAction.repeat(rightShift, count: 1)
+        
+        lampSprite.run(shiftRepeater, completion: moveRight)
+    }
+    
+    private func moveRight() {
+        
+        drawLetterI()
+        if(currentSpeed > 1.5) {
+            
+            currentSpeed *= 0.95
+        }
+        
+        lampSprite.xScale = -1
+        
+        let leftShift = SKAction.moveTo(x: self.frame.size.width / 2.25, duration: TimeInterval(currentSpeed))
+                
+        let shiftRepeater = SKAction.repeat(leftShift, count: 1)
+        
+        lampSprite.run(shiftRepeater, completion: moveLeft)
+    }
+    
     private func makeLampTangible() {
+        
+        currentTexture.removeFromParent()
+        fillerNode.removeFromParent()
         
         lampSprite.physicsBody?.isDynamic = true
     }
@@ -540,7 +576,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             lampSprite.physicsBody?.isDynamic = false
             currentTexture.physicsBody?.isDynamic = false
             let resizeI = SKAction.resize(toHeight: 0, duration: 0.25)
-            let fillerAction = SKAction.resize(toWidth: lampSprite.size.width, duration: 3)
+            let fillerAction = SKAction.resize(toWidth: lampSprite.size.width, duration: 0.5)
             currentScore += 1
             scoreDisplay.text = String(currentScore)
             
