@@ -18,7 +18,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     private var tapGesture: UITapGestureRecognizer = UITapGestureRecognizer()
-    
+    static let defaults = UserDefaults.standard
+        
     var background: SKSpriteNode = SKSpriteNode()
     var platform: SKSpriteNode = SKSpriteNode()
     var lampSprite: SKSpriteNode = SKSpriteNode()
@@ -27,6 +28,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var tapText: SKLabelNode = SKLabelNode()
     var countdownText: SKLabelNode = SKLabelNode()
     var scoreDisplay: SKLabelNode = SKLabelNode()
+    var bestDisplay: SKLabelNode = SKLabelNode()
     var ISprites: [SKSpriteNode] = [SKSpriteNode]()
     var currentTexture: SKSpriteNode = SKSpriteNode()
     var fillerNode: SKSpriteNode = SKSpriteNode()
@@ -34,8 +36,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var initialSize: CGSize = CGSize()
     var currentScore: Int = 0
     var currentJumpCount: Int = 0
+    var iterationCount: Int = 0
     var hasReturned: Bool = true
     var isLanding: Bool = false
+    var gameIsOver: Bool = false
     var currentSpeed: CGFloat = 5
     
     var lampShift: SKAction = SKAction()
@@ -63,9 +67,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     private func resetModifiers() {
         
+        iterationCount = 0
         currentScore = 0
         currentSpeed = 5.0
         currentJumpCount = 0
+        gameIsOver = false
         hasReturned = true
         isLanding = false
     }
@@ -114,15 +120,21 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     private func drawLamp() -> Void {
         
         var startingYPos: CGFloat = 0
+        var endingYPos: CGFloat = 0
+        var lampMult: CGFloat = 0
         
         if(UIDevice.current.userInterfaceIdiom == .phone) {
             
             startingYPos = -self.frame.size.height / 5.25
+            endingYPos = -self.frame.size.height / 12
+            lampMult = 0.00025
         }
         
         if(UIDevice.current.userInterfaceIdiom == .pad) {
             
             startingYPos = -self.frame.size.height / 4.5
+            endingYPos = -self.frame.size.height / 8
+            lampMult = 0.0009
         }
         
         lampSprite = SKSpriteNode(imageNamed: "lamp1")
@@ -132,7 +144,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let lampFrame2: [SKTexture] = [SKTexture(imageNamed: "lamp6")]
         
         let lampJumpAnimation = SKAction.animate(with: lampFrames1, timePerFrame: 0.05)
-        let moveJumpAnimation = SKAction.moveTo(y: -self.frame.size.height / 12, duration: 0.17)
+        let moveJumpAnimation = SKAction.moveTo(y: endingYPos, duration: 0.17)
         let lampLandAnimation = SKAction.animate(with: lampFrame2, timePerFrame: 0.05)
         let moveLandAnimation = SKAction.moveTo(y: startingYPos, duration: 0.17)
         
@@ -153,12 +165,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         lampSprite.size = CGSize(width: lampSprite.size.width * (self.frame.size.width * 0.00025), height: lampSprite.size.height * (self.frame.size.width * 0.00025))
         lampSprite.name = "lamp"
         
-        lampSprite.physicsBody = SKPhysicsBody(circleOfRadius: lampSprite.size.width / 3.5)
+        lampSprite.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: lampSprite.size.width / 2, height: lampSprite.size.height))
         lampSprite.physicsBody?.affectedByGravity = false
         lampSprite.physicsBody?.categoryBitMask = ColliderType.lamp
         lampSprite.physicsBody?.contactTestBitMask = ColliderType.posI | ColliderType.negI
         lampSprite.physicsBody?.collisionBitMask = ColliderType.posI | ColliderType.negI
-        lampSprite.physicsBody?.isDynamic = true
+        lampSprite.physicsBody?.isDynamic = false
         
         lampSprite.zPosition = 3
         lampSprite.xScale = -1
@@ -173,15 +185,18 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     @objc private func jumpLamp() -> Void {
         
         var startingYPos: CGFloat = 0
+        var highYPos: CGFloat = 0
         
         if(UIDevice.current.userInterfaceIdiom == .phone) {
             
             startingYPos = -self.frame.size.height / 5.25
+            highYPos = startingYPos + (self.frame.size.height / 3)
         }
         
         if(UIDevice.current.userInterfaceIdiom == .pad) {
             
             startingYPos = -self.frame.size.height / 4.5
+            highYPos = startingYPos + (self.frame.size.height / 4.5)
         }
         
         if((currentJumpCount >= 1) && (!hasReturned)) {
@@ -195,7 +210,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         if(currentJumpCount < 1) {
                         
             //lampSprite.removeAction(forKey: "lampanimation")
-            let jumpAnim = SKAction.moveTo(y: lampSprite.position.y + (self.frame.size.height / 3), duration: 0.15)
+            let jumpAnim = SKAction.moveTo(y: highYPos, duration: 0.15)
             let landAnim = SKAction.moveTo(y: startingYPos, duration: 0.37)
             
             let jumpSeq = SKAction.sequence([jumpAnim, landAnim])
@@ -303,6 +318,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     private func showEndingScreen() {
         
         scoreDisplay.removeFromParent()
+        bestDisplay.removeFromParent()
         currentTexture.removeFromParent()
         lampSprite.removeFromParent()
         
@@ -332,7 +348,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let highScoreText: SKLabelNode = SKLabelNode(fontNamed: "MinercraftoryRegular")
         highScoreText.fontSize = self.frame.size.width * 0.0225
         highScoreText.fontColor = .white
-        highScoreText.text = "Best: " + String(currentScore)
+        highScoreText.text = "Best: " + String(savedData.highScore)
         highScoreText.position = CGPoint(x: (scoreHolder.position.x + scoreHolder.frame.width) / 3.55, y: (scoreHolder.position.y - scoreHolder.frame.height) / 5.75)
         
         scoreText.zPosition = 6
@@ -344,13 +360,25 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         replayButton.position = CGPoint(x: -highScoreText.position.x * 0.85, y: highScoreText.position.y / 1.5)
         replayButton.isUserInteractionEnabled = false
         
+        if(UIDevice.current.userInterfaceIdiom == .pad) {
+            
+            replayButton.size = CGSize(width: replayButton.size.width * (self.frame.size.width * 0.0007), height: replayButton.size.height * (self.frame.size.width * 0.0007))
+            replayButton.position = CGPoint(x: -highScoreText.position.x * 0.85, y: highScoreText.position.y / 1.5)
+        }
+        
         replayButton.zPosition = 6
         
         let boardButton: SKSpriteNode = SKSpriteNode(imageNamed: "gameoverboard")
         boardButton.name = "leaderboard"
         boardButton.size = CGSize(width: boardButton.size.width * (self.frame.size.width * 0.000275), height: boardButton.size.height * (self.frame.size.width * 0.000275))
-        boardButton.position = CGPoint(x: replayButton.position.x / 1.5, y: -self.frame.size.height / 3.2)
+        boardButton.position = CGPoint(x: replayButton.position.x / 1.5, y: -self.frame.size.height / 3)
         boardButton.isUserInteractionEnabled = false
+        
+        if(UIDevice.current.userInterfaceIdiom == .pad) {
+            
+            boardButton.size = CGSize(width: boardButton.size.width * (self.frame.size.width * 0.0008), height: boardButton.size.height * (self.frame.size.width * 0.0008))
+            boardButton.position.y = -self.frame.size.height / 3.5
+        }
         
         boardButton.zPosition = 6
         
@@ -374,6 +402,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         replayText.position = CGPoint(x: 0, y: replayButton.size.height / 9)
         boardText.position = CGPoint(x: -replayButton.size.width / 6.5, y: replayButton.size.height / 2.25)
+        
+        if(UIDevice.current.userInterfaceIdiom == .pad) {
+            
+            replayText.fontSize = self.frame.size.width * 0.0275
+            boardText.fontSize = self.frame.size.width * 0.024
+            
+            replayText.position = CGPoint(x: 0, y: replayButton.size.height / 10)
+            boardText.position = CGPoint(x: -replayButton.size.width / 5.5, y: replayButton.size.height / 2)
+        }
         
         self.addChild(replayButton)
         self.addChild(boardButton)
@@ -421,12 +458,24 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         scoreDisplay.zPosition = 5
         
+        bestDisplay = SKLabelNode(fontNamed: "BitPap")
+        bestDisplay.fontColor = .black
+        bestDisplay.alpha = 0.5
+        bestDisplay.fontSize = self.frame.size.width * 0.03
+        bestDisplay.text = "Best: " + String(savedData.highScore)
+        bestDisplay.position.x = scoreDisplay.position.x + 2
+        bestDisplay.position.y = scoreDisplay.position.y - (self.frame.size.width / 24)
+        
+        bestDisplay.zPosition = 5
+        
         self.addChild(scoreDisplay)
+        self.addChild(bestDisplay)
     }
     
     private func drawLetterI() {
                         
         var IPos: CGFloat = 0
+        var badYPos: CGFloat = 0
         
         if(UIDevice.current.userInterfaceIdiom == .phone) {
             
@@ -435,10 +484,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         if(UIDevice.current.userInterfaceIdiom == .pad) {
             
-            IPos = -self.frame.size.height / 4.5
+            IPos = -self.frame.size.height / 3.25
         }
         
-        if(currentScore < 50) {
+        if(currentScore < 20) {
             
             currentTexture = SKSpriteNode(texture: ISprites[0].texture)
         }
@@ -449,18 +498,26 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         currentTexture.size = CGSize(width: currentTexture.size.width * (self.frame.size.width * 0.0004), height: currentTexture.size.height * (self.frame.size.width * 0.0004))
         textureSize = currentTexture.size
+        badYPos = 22
         
-        currentTexture.position.x = CGFloat.random(in: -self.frame.size.width / 6 ... self.frame.size.width / 6)
+        if(UIDevice.current.userInterfaceIdiom == .pad) {
+            
+            currentTexture.size = CGSize(width: currentTexture.size.width * (self.frame.size.width * 0.0009), height: currentTexture.size.height * (self.frame.size.width * 0.0009))
+            textureSize = currentTexture.size
+            badYPos = 30
+        }
+        
+        currentTexture.position.x = CGFloat.random(in: -self.frame.size.width / 15 ... self.frame.size.width / 15)
         currentTexture.position.y = IPos
         currentTexture.name = "badI"
         currentTexture.anchorPoint = CGPoint(x: 0.5, y: 0)
         
-        currentTexture.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: currentTexture.size.width * 0.85, height: currentTexture.size.height), center: CGPoint(x: 0, y: 22))
+        currentTexture.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: currentTexture.size.width * 0.85, height: currentTexture.size.height), center: CGPoint(x: 0, y: badYPos))
         currentTexture.physicsBody?.affectedByGravity = false
         currentTexture.physicsBody?.categoryBitMask = ColliderType.negI
         currentTexture.physicsBody?.collisionBitMask = ColliderType.lamp
         currentTexture.physicsBody?.contactTestBitMask = ColliderType.lamp
-        currentTexture.physicsBody?.isDynamic = false
+        currentTexture.physicsBody?.isDynamic = true
         
         currentTexture.zPosition = 5
                 
@@ -469,14 +526,19 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         fillerNode.size = CGSize(width: fillerNode.size.width * (self.frame.size.width * 0.0001), height: fillerNode.size.height * (self.frame.size.width * 0.0001))
         fillerNode.position.x = currentTexture.position.x
         fillerNode.position.y = currentTexture.position.y + (4 * fillerNode.size.height)
+        
+        if(UIDevice.current.userInterfaceIdiom == .pad) {
+            
+            fillerNode.position.y = currentTexture.position.y + (4.5 * fillerNode.size.height)
+        }
         fillerNode.alpha = 0.0
         
-        fillerNode.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: currentTexture.size.width * 0.6, height: currentTexture.size.height / 6), center: CGPoint(x: 0, y: 0))
+        fillerNode.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: currentTexture.size.width * 0.55, height: currentTexture.size.height / 6), center: CGPoint(x: 0, y: 0))
         fillerNode.physicsBody?.affectedByGravity = false
         fillerNode.physicsBody?.categoryBitMask = ColliderType.posI
         fillerNode.physicsBody?.collisionBitMask = ColliderType.lamp
         fillerNode.physicsBody?.contactTestBitMask = ColliderType.lamp
-        fillerNode.physicsBody?.isDynamic = false
+        fillerNode.physicsBody?.isDynamic = true
         
         fillerNode.zPosition = 5
         
@@ -492,12 +554,24 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     private func moveLeft() {
         
-        drawLetterI()
-        if(currentSpeed > 1.5) {
+        if(currentTexture.size.height == 0) {
             
-            currentSpeed *= 0.95
+            drawLetterI()
+        }
+        else {
+            performDieAnimation()
+        }
+        
+        if(currentSpeed > 1.75) {
+            
+            currentSpeed *= 0.97
+        }
+        else {
+            currentSpeed = 1.75
         }
     
+        iterationCount += 1
+        
         lampSprite.xScale = 1
         
         let rightShift = SKAction.moveTo(x: -self.frame.size.width / 2.25, duration: TimeInterval(currentSpeed))
@@ -509,10 +583,27 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     private func moveRight() {
         
-        drawLetterI()
-        if(currentSpeed > 1.5) {
+        if(currentTexture.size.height == textureSize.height) {
             
-            currentSpeed *= 0.95
+            if(iterationCount == 0) {
+                
+                drawLetterI()
+            }
+            else {
+                
+                performDieAnimation()
+            }
+        }
+        else {
+            drawLetterI()
+        }
+        
+        if(currentSpeed > 1.75) {
+            
+            currentSpeed *= 0.97
+        }
+        else {
+            currentSpeed = 1.75
         }
         
         lampSprite.xScale = -1
@@ -526,10 +617,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     private func makeLampTangible() {
         
+        if(currentScore > savedData.highScore) {
+            
+            savedData.highScore = currentScore
+            GameScene.defaults.setValue(currentScore, forKey: "highscore")
+        }
+        
         currentTexture.removeFromParent()
         fillerNode.removeFromParent()
         
-        lampSprite.physicsBody?.isDynamic = true
+        lampSprite.physicsBody?.isDynamic = false
+        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -545,12 +643,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             cleanUp()
             initializeGame()
         }
-        if((node?.name == "leaderboard") || (node?.name == "boardtext")) {
+        if((node?.name == "share") || (node?.name == "sharetext")) {
             
-            print("leaderboard...")
         }
       }
     }
+    
     
     func cleanUp() {
         
@@ -568,17 +666,32 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         if(((nodeA?.name == "lamp") && (nodeB?.name == "badI")) || ((nodeA?.name == "badI") && (nodeB?.name == "lamp")))
         {
+            gameIsOver = true
             performDieAnimation()
         }
                 
         else if(((nodeA?.name == "lamp") && (nodeB?.name == "goodI")) || ((nodeA?.name == "goodI") && (nodeB?.name == "lamp")))
         {
+            if(gameIsOver) {
+                
+                return
+            }
+            
             lampSprite.physicsBody?.isDynamic = false
             currentTexture.physicsBody?.isDynamic = false
             let resizeI = SKAction.resize(toHeight: 0, duration: 0.25)
             let fillerAction = SKAction.resize(toWidth: lampSprite.size.width, duration: 0.5)
             currentScore += 1
             scoreDisplay.text = String(currentScore)
+            
+            if(currentScore > savedData.highScore) {
+                
+                bestDisplay.text = "Best: " + String(currentScore)
+                
+                if((mainViewController?.authPlayer()) != nil) {
+                    mainViewController?.saveHighscore(number: currentScore)
+                }
+            }
             
             currentTexture.run(resizeI)
             currentTexture.run(fillerAction, completion: makeLampTangible)

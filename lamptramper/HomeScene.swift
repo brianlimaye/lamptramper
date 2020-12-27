@@ -9,6 +9,13 @@ import SpriteKit
 import GameplayKit
 import StoreKit
 
+struct savedData {
+    
+    static var highScore: Int = 0
+}
+
+var mainViewController: GameViewController?
+
 class HomeScene: SKScene {
     
     var background: SKSpriteNode = SKSpriteNode()
@@ -31,6 +38,11 @@ class HomeScene: SKScene {
         drawPlatform()
         drawLamp()
         drawButtons()
+    }
+    
+    private func pullSavedData() {
+        
+        savedData.highScore = GameScene.defaults.integer(forKey: "highscore")
     }
     
     private func drawMainText() -> Void {
@@ -227,9 +239,8 @@ class HomeScene: SKScene {
         
         if((node?.name == "leaderboard") || (node?.name == "boardtext")) {
             
-            print("leaderboard...")
+            mainViewController?.showLeaderBoard()
         }
-            
       }
    }
 }

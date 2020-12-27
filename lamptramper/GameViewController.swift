@@ -6,18 +6,19 @@
 //
 
 import UIKit
+import GameKit
 import SpriteKit
 import GameplayKit
 
-class GameViewController: UIViewController {
-    
+class GameViewController: UIViewController, GKGameCenterControllerDelegate {
+        
     override var prefersStatusBarHidden: Bool {
         return true
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-                
+    
         if let view = self.view as! SKView? {
             
             let scene = HomeScene(size: view.frame.size)
@@ -26,11 +27,62 @@ class GameViewController: UIViewController {
             view.presentScene(scene)
                         
             view.ignoresSiblingOrder = true
-            view.showsFPS = true
-            view.showsNodeCount = true
             view.showsPhysics = true
         }
+        
+        mainViewController = self
+        
+        authPlayer()
     }
+
+    
+    func authPlayer(){
+            
+        let localPlayer = GKLocalPlayer.local
+            
+            localPlayer.authenticateHandler = {
+                (view, error) in
+                
+                if view != nil {
+                    
+                    self.present(view!, animated: true, completion: nil)
+                }
+                else {
+                    
+                    print(GKLocalPlayer.local.isAuthenticated)
+                }
+            }
+        }
+        
+        
+        func saveHighscore(number : Int){
+            
+            if GKLocalPlayer.local.isAuthenticated {
+                
+                let scoreReporter = GKScore(leaderboardIdentifier: "com.ishiba.lamptramper.HighScores")
+                
+                scoreReporter.value = Int64(number)
+                
+                let scoreArray : [GKScore] = [scoreReporter]
+                
+                GKScore.report(scoreArray, withCompletionHandler: nil)
+            }
+        }
+        
+        func showLeaderBoard(){
+            let viewController = self.view.window?.rootViewController
+            let gcvc = GKGameCenterViewController()
+            
+            gcvc.gameCenterDelegate = self
+            
+            viewController?.present(gcvc, animated: true, completion: nil)
+        }
+        
+        
+       func gameCenterViewControllerDidFinish(_ gameCenterViewController: GKGameCenterViewController) {
+            gameCenterViewController.dismiss(animated: true, completion: nil)
+            
+        }
 
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         if UIDevice.current.userInterfaceIdiom == .phone {
