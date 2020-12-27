@@ -184,14 +184,9 @@ class HomeScene: SKScene {
         let lampLandAnimation = SKAction.animate(with: lampFrame2, timePerFrame: 0.05)
         let moveLandAnimation = SKAction.moveTo(y: startingYPos, duration: 0.17)
         
-        let rightShift = SKAction.moveTo(x: self.frame.size.width / 2.25, duration: 5)
-        let leftShift = SKAction.moveTo(x: -self.frame.size.width / 2.25, duration: 5)
-        
         let jumpSequencer = SKAction.sequence([lampJumpAnimation, moveJumpAnimation, lampLandAnimation, moveLandAnimation])
-        let shiftSequencer = SKAction.sequence([rightShift, leftShift])
         
         let lampAnimRepeater = SKAction.repeatForever(jumpSequencer)
-        let shiftRepeater = SKAction.repeatForever(shiftSequencer)
         
         lampSprite.position = CGPoint(x: -self.frame.size.width / 2.5, y: startingYPos)
         lampSprite.size = CGSize(width: lampSprite.size.width * (self.frame.size.width * 0.00025), height: lampSprite.size.height * (self.frame.size.width * 0.00025))
@@ -200,7 +195,6 @@ class HomeScene: SKScene {
         lampSprite.xScale = -1
         
         lampSprite.run(lampAnimRepeater)
-        //lampSprite.run(shiftRepeater)
         
         self.addChild(lampSprite)
     }

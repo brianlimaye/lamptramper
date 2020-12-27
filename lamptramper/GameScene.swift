@@ -7,6 +7,7 @@
 
 import SpriteKit
 import GameplayKit
+import AVFoundation
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
     
@@ -19,6 +20,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     private var tapGesture: UITapGestureRecognizer = UITapGestureRecognizer()
     static let defaults = UserDefaults.standard
+    var audioPlayer: AVAudioPlayer?
         
     var background: SKSpriteNode = SKSpriteNode()
     var platform: SKSpriteNode = SKSpriteNode()
@@ -121,20 +123,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         var startingYPos: CGFloat = 0
         var endingYPos: CGFloat = 0
-        var lampMult: CGFloat = 0
         
         if(UIDevice.current.userInterfaceIdiom == .phone) {
             
             startingYPos = -self.frame.size.height / 5.25
             endingYPos = -self.frame.size.height / 12
-            lampMult = 0.00025
         }
         
         if(UIDevice.current.userInterfaceIdiom == .pad) {
             
             startingYPos = -self.frame.size.height / 4.5
             endingYPos = -self.frame.size.height / 8
-            lampMult = 0.0009
         }
         
         lampSprite = SKSpriteNode(imageNamed: "lamp1")
@@ -356,31 +355,31 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         let replayButton: SKSpriteNode = SKSpriteNode(imageNamed: "gameoverreplay")
         replayButton.name = "replay"
-        replayButton.size = CGSize(width: replayButton.size.width * (self.frame.size.width * 0.000375), height: replayButton.size.height * (self.frame.size.width * 0.000375))
+        replayButton.size = CGSize(width: replayButton.size.width * (self.frame.size.width * 0.00035), height: replayButton.size.height * (self.frame.size.width * 0.00035))
         replayButton.position = CGPoint(x: -highScoreText.position.x * 0.85, y: highScoreText.position.y / 1.5)
         replayButton.isUserInteractionEnabled = false
         
         if(UIDevice.current.userInterfaceIdiom == .pad) {
             
-            replayButton.size = CGSize(width: replayButton.size.width * (self.frame.size.width * 0.0007), height: replayButton.size.height * (self.frame.size.width * 0.0007))
+            replayButton.size = CGSize(width: replayButton.size.width * (self.frame.size.width * 0.0008), height: replayButton.size.height * (self.frame.size.width * 0.0008))
             replayButton.position = CGPoint(x: -highScoreText.position.x * 0.85, y: highScoreText.position.y / 1.5)
         }
         
         replayButton.zPosition = 6
         
-        let boardButton: SKSpriteNode = SKSpriteNode(imageNamed: "gameoverboard")
-        boardButton.name = "leaderboard"
-        boardButton.size = CGSize(width: boardButton.size.width * (self.frame.size.width * 0.000275), height: boardButton.size.height * (self.frame.size.width * 0.000275))
-        boardButton.position = CGPoint(x: replayButton.position.x / 1.5, y: -self.frame.size.height / 3)
-        boardButton.isUserInteractionEnabled = false
+        let shareButton: SKSpriteNode = SKSpriteNode(imageNamed: "tanpixelbutton")
+        shareButton.name = "share"
+        shareButton.size = CGSize(width: shareButton.size.width * (self.frame.size.width * 0.00035), height: shareButton.size.height * (self.frame.size.width * 0.00035))
+        shareButton.position = CGPoint(x: replayButton.position.x, y: -self.frame.size.height / 4.25)
+        shareButton.isUserInteractionEnabled = false
         
         if(UIDevice.current.userInterfaceIdiom == .pad) {
             
-            boardButton.size = CGSize(width: boardButton.size.width * (self.frame.size.width * 0.0008), height: boardButton.size.height * (self.frame.size.width * 0.0008))
-            boardButton.position.y = -self.frame.size.height / 3.5
+            shareButton.size = CGSize(width: shareButton.size.width * (self.frame.size.width * 0.0008), height: shareButton.size.height * (self.frame.size.width * 0.0008))
+            shareButton.position.y = -self.frame.size.height / 4.5
         }
         
-        boardButton.zPosition = 6
+        shareButton.zPosition = 6
         
         let replayText = SKLabelNode(fontNamed: "HABESHAPIXELS-Bold")
         replayText.fontSize = self.frame.size.width * 0.0275
@@ -388,32 +387,32 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         replayText.name = "replaytext"
         replayText.text = "Replay"
         
-        let boardText = SKLabelNode(fontNamed: "HABESHAPIXELS-Bold")
-        boardText.fontSize = self.frame.size.width * 0.0225
-        boardText.fontColor = .white
-        boardText.name = "boardtext"
-        boardText.text = "Leaderboard"
+        let shareText = SKLabelNode(fontNamed: "HABESHAPIXELS-Bold")
+        shareText.fontSize = self.frame.size.width * 0.0275
+        shareText.fontColor = .white
+        shareText.name = "sharetext"
+        shareText.text = "Share"
         
         replayText.zPosition = 7
-        boardText.zPosition = 7
+        shareText.zPosition = 7
         
         replayButton.addChild(replayText)
-        boardButton.addChild(boardText)
+        shareButton.addChild(shareText)
         
         replayText.position = CGPoint(x: 0, y: replayButton.size.height / 9)
-        boardText.position = CGPoint(x: -replayButton.size.width / 6.5, y: replayButton.size.height / 2.25)
+        shareText.position = CGPoint(x: 0, y: replayButton.size.height / 9)
         
         if(UIDevice.current.userInterfaceIdiom == .pad) {
             
             replayText.fontSize = self.frame.size.width * 0.0275
-            boardText.fontSize = self.frame.size.width * 0.024
+            shareText.fontSize = self.frame.size.width * 0.0275
             
-            replayText.position = CGPoint(x: 0, y: replayButton.size.height / 10)
-            boardText.position = CGPoint(x: -replayButton.size.width / 5.5, y: replayButton.size.height / 2)
+            replayText.position = CGPoint(x: 0, y: replayButton.size.height / 9)
+            shareText.position = CGPoint(x: 0, y: replayButton.size.height / 9)
         }
         
         self.addChild(replayButton)
-        self.addChild(boardButton)
+        self.addChild(shareButton)
         
         self.addChild(highScoreText)
         self.addChild(scoreText)
@@ -645,11 +644,49 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
         if((node?.name == "share") || (node?.name == "sharetext")) {
             
+            shareApp()
         }
       }
     }
     
+    private func shareApp() {
+        
+        let message = "I just scored " + String(currentScore) + " points in this app, Lamp Tramper! You should check it out!"
+        
+        if let urlStr = NSURL(string: "https://apps.apple.com/us/app/lamp-tramper/id1543774316") {
+            let objectsToShare = [message, urlStr] as [Any]
+            let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+
+            if UIDevice.current.userInterfaceIdiom == .pad {
+                if let popup = activityVC.popoverPresentationController {
+                    popup.sourceView = self.view
+                    popup.sourceRect = CGRect(x: (self.view?.frame.size.width)! / 2, y: (self.view?.frame.size.height)! / 4, width: 0, height: 0)
+                }
+            }
+
+            mainViewController?.present(activityVC, animated: true, completion: nil)
+        }
+    }
     
+    func playSmushSound() {
+        
+        let smushSounds: [String] = ["smush1", "smush2", "smush3"]
+        let rand = Int.random(in: 0 ..< smushSounds.count)
+        let url = Bundle.main.url(forResource: smushSounds[rand], withExtension: "mp3")!
+
+        do {
+            audioPlayer = try AVAudioPlayer(contentsOf: url)
+            guard let player = audioPlayer else { return }
+
+            player.prepareToPlay()
+            player.play()
+
+        } catch let error as NSError {
+            print(error.description)
+        }
+    }
+    
+
     func cleanUp() {
         
         for child in self.children {
@@ -667,6 +704,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         if(((nodeA?.name == "lamp") && (nodeB?.name == "badI")) || ((nodeA?.name == "badI") && (nodeB?.name == "lamp")))
         {
             gameIsOver = true
+            fillerNode.removeFromParent()
             performDieAnimation()
         }
                 
@@ -677,6 +715,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 return
             }
             
+            playSmushSound()
             lampSprite.physicsBody?.isDynamic = false
             currentTexture.physicsBody?.isDynamic = false
             let resizeI = SKAction.resize(toHeight: 0, duration: 0.25)

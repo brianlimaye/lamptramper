@@ -7,7 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B438FC5025944DFB00592BEF /* tanpixelbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = B438FC4F25944DFB00592BEF /* tanpixelbutton.png */; };
+		B40071A12598414300706BAC /* tanpixelbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = B40071A02598414200706BAC /* tanpixelbutton.png */; };
+		B40071A925984ADA00706BAC /* trampericon.png in Resources */ = {isa = PBXBuildFile; fileRef = B40071A825984ADA00706BAC /* trampericon.png */; };
+		B40071B325985B7B00706BAC /* smush3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B40071B025985B7B00706BAC /* smush3.mp3 */; };
+		B40071B425985B7B00706BAC /* smush1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B40071B125985B7B00706BAC /* smush1.mp3 */; };
+		B40071B525985B7B00706BAC /* smush2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B40071B225985B7B00706BAC /* smush2.mp3 */; };
+		B40071BA25985C1100706BAC /* jump.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B40071B925985C1000706BAC /* jump.mp3 */; };
 		B438FC57259455CA00592BEF /* gameoverboard.png in Resources */ = {isa = PBXBuildFile; fileRef = B438FC55259455CA00592BEF /* gameoverboard.png */; };
 		B438FC5C2594563600592BEF /* gameoverreplay.png in Resources */ = {isa = PBXBuildFile; fileRef = B438FC5B2594563600592BEF /* gameoverreplay.png */; };
 		B438FC6C259459C000592BEF /* OrangeKid-Regular.ps in Resources */ = {isa = PBXBuildFile; fileRef = B438FC6B259459C000592BEF /* OrangeKid-Regular.ps */; };
@@ -39,6 +44,7 @@
 		B4C11DB125901B4B00EE2302 /* pixelbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = B4C11DB025901B4B00EE2302 /* pixelbutton.png */; };
 		B4C11DB62590314900EE2302 /* yellowpixelbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = B4C11DB52590314900EE2302 /* yellowpixelbutton.png */; };
 		B4C11DBB259039BD00EE2302 /* redpixelbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = B4C11DBA259039BC00EE2302 /* redpixelbutton.png */; };
+		B4DCDE352597EA02002416D9 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4DCDE342597EA02002416D9 /* GameKit.framework */; };
 		B4F8795B2591A7E000DA13FF /* lavenderletteri.png in Resources */ = {isa = PBXBuildFile; fileRef = B4F879552591A7E000DA13FF /* lavenderletteri.png */; };
 		B4F8795C2591A7E000DA13FF /* blueletteri.png in Resources */ = {isa = PBXBuildFile; fileRef = B4F879562591A7E000DA13FF /* blueletteri.png */; };
 		B4F8795D2591A7E000DA13FF /* letteri.png in Resources */ = {isa = PBXBuildFile; fileRef = B4F879572591A7E000DA13FF /* letteri.png */; };
@@ -65,7 +71,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		B438FC4F25944DFB00592BEF /* tanpixelbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tanpixelbutton.png; sourceTree = "<group>"; };
+		B40071A02598414200706BAC /* tanpixelbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tanpixelbutton.png; path = ../../../../../../Downloads/tanpixelbutton.png; sourceTree = "<group>"; };
+		B40071A825984ADA00706BAC /* trampericon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = trampericon.png; sourceTree = "<group>"; };
+		B40071B025985B7B00706BAC /* smush3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = smush3.mp3; sourceTree = "<group>"; };
+		B40071B125985B7B00706BAC /* smush1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = smush1.mp3; sourceTree = "<group>"; };
+		B40071B225985B7B00706BAC /* smush2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = smush2.mp3; sourceTree = "<group>"; };
+		B40071B925985C1000706BAC /* jump.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = jump.mp3; sourceTree = "<group>"; };
 		B438FC55259455CA00592BEF /* gameoverboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gameoverboard.png; sourceTree = "<group>"; };
 		B438FC5B2594563600592BEF /* gameoverreplay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gameoverreplay.png; path = ../../../../../../Downloads/gameoverreplay.png; sourceTree = "<group>"; };
 		B438FC6B259459C000592BEF /* OrangeKid-Regular.ps */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OrangeKid-Regular.ps"; sourceTree = "<group>"; };
@@ -103,6 +114,7 @@
 		B4C11DB025901B4B00EE2302 /* pixelbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pixelbutton.png; sourceTree = "<group>"; };
 		B4C11DB52590314900EE2302 /* yellowpixelbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yellowpixelbutton.png; sourceTree = "<group>"; };
 		B4C11DBA259039BC00EE2302 /* redpixelbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redpixelbutton.png; sourceTree = "<group>"; };
+		B4DCDE342597EA02002416D9 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		B4F879552591A7E000DA13FF /* lavenderletteri.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lavenderletteri.png; sourceTree = "<group>"; };
 		B4F879562591A7E000DA13FF /* blueletteri.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueletteri.png; sourceTree = "<group>"; };
 		B4F879572591A7E000DA13FF /* letteri.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = letteri.png; sourceTree = "<group>"; };
@@ -116,6 +128,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4DCDE352597EA02002416D9 /* GameKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,6 +149,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B40071AF25985B6600706BAC /* sounds */ = {
+			isa = PBXGroup;
+			children = (
+				B40071B925985C1000706BAC /* jump.mp3 */,
+				B40071B125985B7B00706BAC /* smush1.mp3 */,
+				B40071B225985B7B00706BAC /* smush2.mp3 */,
+				B40071B025985B7B00706BAC /* smush3.mp3 */,
+			);
+			path = sounds;
+			sourceTree = "<group>";
+		};
 		B45724AA258EFF5C0066FD2E = {
 			isa = PBXGroup;
 			children = (
@@ -143,6 +167,7 @@
 				B45724CD258EFF5D0066FD2E /* lamptramperTests */,
 				B45724D8258EFF5D0066FD2E /* lamptramperUITests */,
 				B45724B4258EFF5C0066FD2E /* Products */,
+				B4DCDE332597EA02002416D9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -166,6 +191,7 @@
 				B45724BE258EFF5C0066FD2E /* GameViewController.swift */,
 				B45724C0258EFF5C0066FD2E /* Main.storyboard */,
 				B45724C3258EFF5D0066FD2E /* Assets.xcassets */,
+				B40071AF25985B6600706BAC /* sounds */,
 				B49C539F2590078000C77170 /* fonts */,
 				B4572512258F08780066FD2E /* assets */,
 				B45724C5258EFF5D0066FD2E /* Info.plist */,
@@ -194,6 +220,7 @@
 		B4572512258F08780066FD2E /* assets */ = {
 			isa = PBXGroup;
 			children = (
+				B40071A825984ADA00706BAC /* trampericon.png */,
 				B438FC5B2594563600592BEF /* gameoverreplay.png */,
 				B438FC55259455CA00592BEF /* gameoverboard.png */,
 				B4F879562591A7E000DA13FF /* blueletteri.png */,
@@ -203,7 +230,7 @@
 				B4F879582591A7E000DA13FF /* tanletteri.png */,
 				B4F8795A2591A7E000DA13FF /* whiteletteri.png */,
 				B44A825C2591957E00025FAA /* pixel-hand.png */,
-				B438FC4F25944DFB00592BEF /* tanpixelbutton.png */,
+				B40071A02598414200706BAC /* tanpixelbutton.png */,
 				B44A82572591911D00025FAA /* orangepixelbutton.png */,
 				B4C11DBA259039BC00EE2302 /* redpixelbutton.png */,
 				B4C11DB52590314900EE2302 /* yellowpixelbutton.png */,
@@ -232,6 +259,14 @@
 				B4495D9F25900A8E00B16337 /* KarmaticArcade.ps */,
 			);
 			path = fonts;
+			sourceTree = "<group>";
+		};
+		B4DCDE332597EA02002416D9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B4DCDE342597EA02002416D9 /* GameKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -342,17 +377,20 @@
 				B4495DAA25900E3600B16337 /* Thirteen-Pixel-Fonts.ps in Resources */,
 				B44A82682591A29600025FAA /* BitPap.ps in Resources */,
 				B4F8795B2591A7E000DA13FF /* lavenderletteri.png in Resources */,
-				B438FC5025944DFB00592BEF /* tanpixelbutton.png in Resources */,
 				B438FC6C259459C000592BEF /* OrangeKid-Regular.ps in Resources */,
 				B4C11DBB259039BD00EE2302 /* redpixelbutton.png in Resources */,
 				B4F8795E2591A7E000DA13FF /* tanletteri.png in Resources */,
 				B438FC5C2594563600592BEF /* gameoverreplay.png in Resources */,
+				B40071B525985B7B00706BAC /* smush2.mp3 in Resources */,
 				B4C11DB62590314900EE2302 /* yellowpixelbutton.png in Resources */,
 				B4AC71102594107600CA93B1 /* WheatonCapitals-Regular.ps in Resources */,
 				B4572519258F089C0066FD2E /* lamp3.png in Resources */,
 				B4572524258F08AC0066FD2E /* trampergrounds.png in Resources */,
 				B457251B258F089C0066FD2E /* lamp2.png in Resources */,
 				B457251D258F089C0066FD2E /* lamp5.png in Resources */,
+				B40071B425985B7B00706BAC /* smush1.mp3 in Resources */,
+				B40071BA25985C1100706BAC /* jump.mp3 in Resources */,
+				B40071A925984ADA00706BAC /* trampericon.png in Resources */,
 				B4AC71082594027700CA93B1 /* MinercraftoryRegular.ps in Resources */,
 				B4C11DB125901B4B00EE2302 /* pixelbutton.png in Resources */,
 				B457251C258F089C0066FD2E /* lamp4.png in Resources */,
@@ -360,10 +398,12 @@
 				B457251E258F089C0066FD2E /* lamp6.png in Resources */,
 				B45724C2258EFF5C0066FD2E /* Main.storyboard in Resources */,
 				B45724C4258EFF5D0066FD2E /* Assets.xcassets in Resources */,
+				B40071A12598414300706BAC /* tanpixelbutton.png in Resources */,
 				B4F879602591A7E000DA13FF /* whiteletteri.png in Resources */,
 				B44A82582591911D00025FAA /* orangepixelbutton.png in Resources */,
 				B45724BB258EFF5C0066FD2E /* Actions.sks in Resources */,
 				B4572525258F08AC0066FD2E /* tramperbackg.png in Resources */,
+				B40071B325985B7B00706BAC /* smush3.mp3 in Resources */,
 				B4F8795C2591A7E000DA13FF /* blueletteri.png in Resources */,
 				B4F8795D2591A7E000DA13FF /* letteri.png in Resources */,
 				B44A825D2591957E00025FAA /* pixel-hand.png in Resources */,

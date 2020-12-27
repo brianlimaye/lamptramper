@@ -27,7 +27,7 @@ class GameViewController: UIViewController, GKGameCenterControllerDelegate {
             view.presentScene(scene)
                         
             view.ignoresSiblingOrder = true
-            view.showsPhysics = true
+            //view.showsPhysics = true
         }
         
         mainViewController = self
