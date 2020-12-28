@@ -33,6 +33,7 @@ class HomeScene: SKScene {
     override func didMove(to view: SKView) {
 
         scene?.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        pullSavedData()
         drawBackground()
         drawMainText()
         drawPlatform()

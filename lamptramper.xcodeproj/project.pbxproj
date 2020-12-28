@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		48666FE1D5A6AED57DDF92D4 /* Pods_lamptramperTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7F1E65A0E4C0E36A87B3790 /* Pods_lamptramperTests.framework */; };
+		64823BA294EA99D90C3A41C6 /* Pods_lamptramper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C60608F8E2F1C3788701E855 /* Pods_lamptramper.framework */; };
 		B40071A12598414300706BAC /* tanpixelbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = B40071A02598414200706BAC /* tanpixelbutton.png */; };
 		B40071A925984ADA00706BAC /* trampericon.png in Resources */ = {isa = PBXBuildFile; fileRef = B40071A825984ADA00706BAC /* trampericon.png */; };
 		B40071B325985B7B00706BAC /* smush3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B40071B025985B7B00706BAC /* smush3.mp3 */; };
@@ -51,6 +53,8 @@
 		B4F8795E2591A7E000DA13FF /* tanletteri.png in Resources */ = {isa = PBXBuildFile; fileRef = B4F879582591A7E000DA13FF /* tanletteri.png */; };
 		B4F8795F2591A7E000DA13FF /* pinkletteri.png in Resources */ = {isa = PBXBuildFile; fileRef = B4F879592591A7E000DA13FF /* pinkletteri.png */; };
 		B4F879602591A7E000DA13FF /* whiteletteri.png in Resources */ = {isa = PBXBuildFile; fileRef = B4F8795A2591A7E000DA13FF /* whiteletteri.png */; };
+		B4FA8611259978CC00F1722D /* bluepixelbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = B4FA8610259978CC00F1722D /* bluepixelbutton.png */; };
+		E398C7A2D8168D1BF0E27D5C /* Pods_lamptramper_lamptramperUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DCF750004798ED2C4E7EF2C /* Pods_lamptramper_lamptramperUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +75,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		03820E2700D5B4349593A566 /* Pods-lamptramper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lamptramper.debug.xcconfig"; path = "Target Support Files/Pods-lamptramper/Pods-lamptramper.debug.xcconfig"; sourceTree = "<group>"; };
+		1A2CD68384BF2F60C82C58BD /* Pods-lamptramperTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lamptramperTests.debug.xcconfig"; path = "Target Support Files/Pods-lamptramperTests/Pods-lamptramperTests.debug.xcconfig"; sourceTree = "<group>"; };
+		373D3602748410DA661B8255 /* Pods-lamptramper-lamptramperUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lamptramper-lamptramperUITests.release.xcconfig"; path = "Target Support Files/Pods-lamptramper-lamptramperUITests/Pods-lamptramper-lamptramperUITests.release.xcconfig"; sourceTree = "<group>"; };
+		68EC37714FDD20EADA3DF02A /* Pods-lamptramperTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lamptramperTests.release.xcconfig"; path = "Target Support Files/Pods-lamptramperTests/Pods-lamptramperTests.release.xcconfig"; sourceTree = "<group>"; };
+		7DCF750004798ED2C4E7EF2C /* Pods_lamptramper_lamptramperUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_lamptramper_lamptramperUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B40071A02598414200706BAC /* tanpixelbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tanpixelbutton.png; path = ../../../../../../Downloads/tanpixelbutton.png; sourceTree = "<group>"; };
 		B40071A825984ADA00706BAC /* trampericon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = trampericon.png; sourceTree = "<group>"; };
 		B40071B025985B7B00706BAC /* smush3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = smush3.mp3; sourceTree = "<group>"; };
@@ -121,6 +130,11 @@
 		B4F879582591A7E000DA13FF /* tanletteri.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tanletteri.png; sourceTree = "<group>"; };
 		B4F879592591A7E000DA13FF /* pinkletteri.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pinkletteri.png; sourceTree = "<group>"; };
 		B4F8795A2591A7E000DA13FF /* whiteletteri.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteletteri.png; sourceTree = "<group>"; };
+		B4FA8610259978CC00F1722D /* bluepixelbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bluepixelbutton.png; sourceTree = "<group>"; };
+		B7F1E65A0E4C0E36A87B3790 /* Pods_lamptramperTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_lamptramperTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF75664FC2B8FC06847A5F51 /* Pods-lamptramper-lamptramperUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lamptramper-lamptramperUITests.debug.xcconfig"; path = "Target Support Files/Pods-lamptramper-lamptramperUITests/Pods-lamptramper-lamptramperUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		C60608F8E2F1C3788701E855 /* Pods_lamptramper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_lamptramper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFB190EB2B4230B2577EA468 /* Pods-lamptramper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lamptramper.release.xcconfig"; path = "Target Support Files/Pods-lamptramper/Pods-lamptramper.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +143,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4DCDE352597EA02002416D9 /* GameKit.framework in Frameworks */,
+				64823BA294EA99D90C3A41C6 /* Pods_lamptramper.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,6 +151,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48666FE1D5A6AED57DDF92D4 /* Pods_lamptramperTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,12 +159,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E398C7A2D8168D1BF0E27D5C /* Pods_lamptramper_lamptramperUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		63C43B0D14C59D5820CB8E82 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				03820E2700D5B4349593A566 /* Pods-lamptramper.debug.xcconfig */,
+				FFB190EB2B4230B2577EA468 /* Pods-lamptramper.release.xcconfig */,
+				BF75664FC2B8FC06847A5F51 /* Pods-lamptramper-lamptramperUITests.debug.xcconfig */,
+				373D3602748410DA661B8255 /* Pods-lamptramper-lamptramperUITests.release.xcconfig */,
+				1A2CD68384BF2F60C82C58BD /* Pods-lamptramperTests.debug.xcconfig */,
+				68EC37714FDD20EADA3DF02A /* Pods-lamptramperTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		B40071AF25985B6600706BAC /* sounds */ = {
 			isa = PBXGroup;
 			children = (
@@ -168,6 +198,7 @@
 				B45724D8258EFF5D0066FD2E /* lamptramperUITests */,
 				B45724B4258EFF5C0066FD2E /* Products */,
 				B4DCDE332597EA02002416D9 /* Frameworks */,
+				63C43B0D14C59D5820CB8E82 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -234,6 +265,7 @@
 				B44A82572591911D00025FAA /* orangepixelbutton.png */,
 				B4C11DBA259039BC00EE2302 /* redpixelbutton.png */,
 				B4C11DB52590314900EE2302 /* yellowpixelbutton.png */,
+				B4FA8610259978CC00F1722D /* bluepixelbutton.png */,
 				B4C11DB025901B4B00EE2302 /* pixelbutton.png */,
 				B4572523258F08AC0066FD2E /* tramperbackg.png */,
 				B4572522258F08AC0066FD2E /* trampergrounds.png */,
@@ -265,6 +297,9 @@
 			isa = PBXGroup;
 			children = (
 				B4DCDE342597EA02002416D9 /* GameKit.framework */,
+				C60608F8E2F1C3788701E855 /* Pods_lamptramper.framework */,
+				7DCF750004798ED2C4E7EF2C /* Pods_lamptramper_lamptramperUITests.framework */,
+				B7F1E65A0E4C0E36A87B3790 /* Pods_lamptramperTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -276,9 +311,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B45724DE258EFF5D0066FD2E /* Build configuration list for PBXNativeTarget "lamptramper" */;
 			buildPhases = (
+				E8A6EB089D62875A4DF1ED49 /* [CP] Check Pods Manifest.lock */,
+				4F0EAC441D0DBE42E68854F0 /* [CP] Prepare Artifacts */,
 				B45724AF258EFF5C0066FD2E /* Sources */,
 				B45724B0258EFF5C0066FD2E /* Frameworks */,
 				B45724B1258EFF5C0066FD2E /* Resources */,
+				6D779CAF25A6E4019230A6CE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -293,6 +331,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B45724E1258EFF5D0066FD2E /* Build configuration list for PBXNativeTarget "lamptramperTests" */;
 			buildPhases = (
+				1C5533BDFB1E04490AEED6A4 /* [CP] Check Pods Manifest.lock */,
 				B45724C6258EFF5D0066FD2E /* Sources */,
 				B45724C7258EFF5D0066FD2E /* Frameworks */,
 				B45724C8258EFF5D0066FD2E /* Resources */,
@@ -311,9 +350,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B45724E4258EFF5D0066FD2E /* Build configuration list for PBXNativeTarget "lamptramperUITests" */;
 			buildPhases = (
+				E3C3434434995BFA1D01555F /* [CP] Check Pods Manifest.lock */,
+				D90245C1EF3EA308123E8059 /* [CP] Prepare Artifacts */,
 				B45724D1258EFF5D0066FD2E /* Sources */,
 				B45724D2258EFF5D0066FD2E /* Frameworks */,
 				B45724D3258EFF5D0066FD2E /* Resources */,
+				4DBA0174AED726B6930A8306 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -386,6 +428,7 @@
 				B4AC71102594107600CA93B1 /* WheatonCapitals-Regular.ps in Resources */,
 				B4572519258F089C0066FD2E /* lamp3.png in Resources */,
 				B4572524258F08AC0066FD2E /* trampergrounds.png in Resources */,
+				B4FA8611259978CC00F1722D /* bluepixelbutton.png in Resources */,
 				B457251B258F089C0066FD2E /* lamp2.png in Resources */,
 				B457251D258F089C0066FD2E /* lamp5.png in Resources */,
 				B40071B425985B7B00706BAC /* smush1.mp3 in Resources */,
@@ -427,6 +470,143 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1C5533BDFB1E04490AEED6A4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-lamptramperTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4DBA0174AED726B6930A8306 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-lamptramper-lamptramperUITests/Pods-lamptramper-lamptramperUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-lamptramper-lamptramperUITests/Pods-lamptramper-lamptramperUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-lamptramper-lamptramperUITests/Pods-lamptramper-lamptramperUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4F0EAC441D0DBE42E68854F0 /* [CP] Prepare Artifacts */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-lamptramper/Pods-lamptramper-artifacts-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Prepare Artifacts";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-lamptramper/Pods-lamptramper-artifacts-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-lamptramper/Pods-lamptramper-artifacts.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6D779CAF25A6E4019230A6CE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-lamptramper/Pods-lamptramper-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-lamptramper/Pods-lamptramper-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-lamptramper/Pods-lamptramper-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D90245C1EF3EA308123E8059 /* [CP] Prepare Artifacts */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-lamptramper-lamptramperUITests/Pods-lamptramper-lamptramperUITests-artifacts-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Prepare Artifacts";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-lamptramper-lamptramperUITests/Pods-lamptramper-lamptramperUITests-artifacts-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-lamptramper-lamptramperUITests/Pods-lamptramper-lamptramperUITests-artifacts.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E3C3434434995BFA1D01555F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-lamptramper-lamptramperUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E8A6EB089D62875A4DF1ED49 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-lamptramper-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B45724AF258EFF5C0066FD2E /* Sources */ = {
@@ -601,6 +781,7 @@
 		};
 		B45724DF258EFF5D0066FD2E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 03820E2700D5B4349593A566 /* Pods-lamptramper.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -621,6 +802,7 @@
 		};
 		B45724E0258EFF5D0066FD2E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FFB190EB2B4230B2577EA468 /* Pods-lamptramper.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -641,6 +823,7 @@
 		};
 		B45724E2258EFF5D0066FD2E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1A2CD68384BF2F60C82C58BD /* Pods-lamptramperTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -663,6 +846,7 @@
 		};
 		B45724E3258EFF5D0066FD2E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 68EC37714FDD20EADA3DF02A /* Pods-lamptramperTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -685,6 +869,7 @@
 		};
 		B45724E5258EFF5D0066FD2E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BF75664FC2B8FC06847A5F51 /* Pods-lamptramper-lamptramperUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -705,6 +890,7 @@
 		};
 		B45724E6258EFF5D0066FD2E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 373D3602748410DA661B8255 /* Pods-lamptramper-lamptramperUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

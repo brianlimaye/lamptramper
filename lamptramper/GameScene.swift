@@ -189,13 +189,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         if(UIDevice.current.userInterfaceIdiom == .phone) {
             
             startingYPos = -self.frame.size.height / 5.25
-            highYPos = startingYPos + (self.frame.size.height / 3)
+            highYPos = startingYPos + (self.frame.size.height / 3.85)
         }
         
         if(UIDevice.current.userInterfaceIdiom == .pad) {
             
             startingYPos = -self.frame.size.height / 4.5
-            highYPos = startingYPos + (self.frame.size.height / 4.5)
+            highYPos = startingYPos + (self.frame.size.height / 5)
         }
         
         if((currentJumpCount >= 1) && (!hasReturned)) {
@@ -239,13 +239,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         pixelHand = SKSpriteNode(imageNamed: "pixel-hand")
         pixelHand.size = CGSize(width: pixelHand.size.width * (self.frame.size.width * 0.00013), height: pixelHand.size.height * (self.frame.size.width * 0.00013))
         
-        pixelHand.position = CGPoint(x: lampSprite.position.x, y: lampSprite.position.y + 110)
+        pixelHand.position = CGPoint(x: lampSprite.position.x, y: self.frame.size.height / 8.5)
         
         if(UIDevice.current.userInterfaceIdiom == .pad) {
             
             pixelHand.size.width *= 1.1
             pixelHand.size.height *= 1.1
-            pixelHand.position.y = lampSprite.position.y + 245
+            pixelHand.position.y = self.frame.size.height / 6
         }
         
         pixelHand.zPosition = 5
@@ -269,11 +269,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         tapText.fontColor = .white
         tapText.fontSize = self.frame.size.width * 0.03
         tapText.text = "Tap!"
-        tapText.position = CGPoint(x: lampSprite.position.x, y: lampSprite.position.y + 150)
+        tapText.position = CGPoint(x: lampSprite.position.x, y: self.frame.size.height / 6)
         
         if(UIDevice.current.userInterfaceIdiom == .pad) {
             
-            tapText.position.y = lampSprite.position.y + 300
+            tapText.position.y = self.frame.size.height / 4.5
         }
         
         tapText.zPosition = 5
@@ -355,13 +355,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         let replayButton: SKSpriteNode = SKSpriteNode(imageNamed: "gameoverreplay")
         replayButton.name = "replay"
-        replayButton.size = CGSize(width: replayButton.size.width * (self.frame.size.width * 0.00035), height: replayButton.size.height * (self.frame.size.width * 0.00035))
+        replayButton.size = CGSize(width: replayButton.size.width * (self.frame.size.width * 0.000325), height: replayButton.size.height * (self.frame.size.width * 0.000325))
         replayButton.position = CGPoint(x: -highScoreText.position.x * 0.85, y: highScoreText.position.y / 1.5)
         replayButton.isUserInteractionEnabled = false
         
         if(UIDevice.current.userInterfaceIdiom == .pad) {
             
-            replayButton.size = CGSize(width: replayButton.size.width * (self.frame.size.width * 0.0008), height: replayButton.size.height * (self.frame.size.width * 0.0008))
+            replayButton.size = CGSize(width: replayButton.size.width * (self.frame.size.width * 0.0009), height: replayButton.size.height * (self.frame.size.width * 0.0009))
             replayButton.position = CGPoint(x: -highScoreText.position.x * 0.85, y: highScoreText.position.y / 1.5)
         }
         
@@ -369,50 +369,77 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         let shareButton: SKSpriteNode = SKSpriteNode(imageNamed: "tanpixelbutton")
         shareButton.name = "share"
-        shareButton.size = CGSize(width: shareButton.size.width * (self.frame.size.width * 0.00035), height: shareButton.size.height * (self.frame.size.width * 0.00035))
+        shareButton.size = CGSize(width: shareButton.size.width * (self.frame.size.width * 0.000325), height: shareButton.size.height * (self.frame.size.width * 0.000325))
         shareButton.position = CGPoint(x: replayButton.position.x, y: -self.frame.size.height / 4.25)
         shareButton.isUserInteractionEnabled = false
         
         if(UIDevice.current.userInterfaceIdiom == .pad) {
             
-            shareButton.size = CGSize(width: shareButton.size.width * (self.frame.size.width * 0.0008), height: shareButton.size.height * (self.frame.size.width * 0.0008))
+            shareButton.size = CGSize(width: shareButton.size.width * (self.frame.size.width * 0.0009), height: shareButton.size.height * (self.frame.size.width * 0.0009))
             shareButton.position.y = -self.frame.size.height / 4.5
         }
         
         shareButton.zPosition = 6
         
+        let backButton: SKSpriteNode = SKSpriteNode(imageNamed: "bluepixelbutton")
+        backButton.name = "back"
+        backButton.size = CGSize(width: backButton.size.width * (self.frame.size.width * 0.00035), height: backButton.size.height * (self.frame.size.width * 0.00035))
+        backButton.position = CGPoint(x: -self.frame.size.width / 2.5, y: self.frame.size.height / 3)
+        backButton.isUserInteractionEnabled = false
+        
+        if(UIDevice.current.userInterfaceIdiom == .pad) {
+            
+            backButton.size = CGSize(width: backButton.size.width * (self.frame.size.width * 0.0008), height: backButton.size.height * (self.frame.size.width * 0.0008))
+            backButton.position.y = self.frame.size.height / 3
+        }
+        
+        backButton.zPosition = 6
+        
+        
         let replayText = SKLabelNode(fontNamed: "HABESHAPIXELS-Bold")
-        replayText.fontSize = self.frame.size.width * 0.0275
+        replayText.fontSize = self.frame.size.width * 0.024
         replayText.fontColor = .white
         replayText.name = "replaytext"
         replayText.text = "Replay"
         
         let shareText = SKLabelNode(fontNamed: "HABESHAPIXELS-Bold")
-        shareText.fontSize = self.frame.size.width * 0.0275
+        shareText.fontSize = self.frame.size.width * 0.024
         shareText.fontColor = .white
         shareText.name = "sharetext"
         shareText.text = "Share"
         
+        let backText = SKLabelNode(fontNamed: "HABESHAPIXELS-Bold")
+        backText.fontSize = self.frame.size.width * 0.0275
+        backText.fontColor = .white
+        backText.name = "backtext"
+        backText.text = "Back"
+        
         replayText.zPosition = 7
         shareText.zPosition = 7
+        backText.zPosition = 7
         
         replayButton.addChild(replayText)
         shareButton.addChild(shareText)
+        backButton.addChild(backText)
         
-        replayText.position = CGPoint(x: 0, y: replayButton.size.height / 9)
-        shareText.position = CGPoint(x: 0, y: replayButton.size.height / 9)
+        replayText.position = CGPoint(x: 0, y: replayButton.size.height / 9.5)
+        shareText.position = CGPoint(x: 0, y: replayButton.size.height / 9.5)
+        backText.position = CGPoint(x: 0, y: backButton.size.height / 9.5)
         
         if(UIDevice.current.userInterfaceIdiom == .pad) {
             
-            replayText.fontSize = self.frame.size.width * 0.0275
-            shareText.fontSize = self.frame.size.width * 0.0275
+            replayText.fontSize = self.frame.size.width * 0.028
+            shareText.fontSize = self.frame.size.width * 0.028
+            backText.fontSize = self.frame.size.width * 0.032
             
             replayText.position = CGPoint(x: 0, y: replayButton.size.height / 9)
             shareText.position = CGPoint(x: 0, y: replayButton.size.height / 9)
+            backText.position = CGPoint(x: 0, y: backButton.size.height / 9.5)
         }
         
         self.addChild(replayButton)
         self.addChild(shareButton)
+        self.addChild(backButton)
         
         self.addChild(highScoreText)
         self.addChild(scoreText)
@@ -532,7 +559,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
         fillerNode.alpha = 0.0
         
-        fillerNode.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: currentTexture.size.width * 0.55, height: currentTexture.size.height / 6), center: CGPoint(x: 0, y: 0))
+        fillerNode.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: currentTexture.size.width * 0.5, height: currentTexture.size.height / 6), center: CGPoint(x: 0, y: 0))
         fillerNode.physicsBody?.affectedByGravity = false
         fillerNode.physicsBody?.categoryBitMask = ColliderType.posI
         fillerNode.physicsBody?.collisionBitMask = ColliderType.lamp
@@ -561,7 +588,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             performDieAnimation()
         }
         
-        if(currentSpeed > 1.75) {
+        if(currentSpeed > 1.25) {
             
             currentSpeed *= 0.97
         }
@@ -597,7 +624,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             drawLetterI()
         }
         
-        if(currentSpeed > 1.75) {
+        if(currentSpeed > 1.25) {
             
             currentSpeed *= 0.97
         }
@@ -645,6 +672,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         if((node?.name == "share") || (node?.name == "sharetext")) {
             
             shareApp()
+        }
+            
+        if((node?.name == "back") || (node?.name == "backtext")) {
+        
+            let homeScene = HomeScene(size: (view?.bounds.size)!)
+            homeScene.scaleMode = .aspectFill
+            view?.presentScene(homeScene)
         }
       }
     }
@@ -715,7 +749,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 return
             }
             
-            playSmushSound()
             lampSprite.physicsBody?.isDynamic = false
             currentTexture.physicsBody?.isDynamic = false
             let resizeI = SKAction.resize(toHeight: 0, duration: 0.25)
@@ -725,6 +758,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
             if(currentScore > savedData.highScore) {
                 
+                GameScene.defaults.setValue(currentScore, forKey: "highscore")
                 bestDisplay.text = "Best: " + String(currentScore)
                 
                 if((mainViewController?.authPlayer()) != nil) {
@@ -733,6 +767,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             }
             
             currentTexture.run(resizeI)
+            playSmushSound()
             currentTexture.run(fillerAction, completion: makeLampTangible)
         }
     }
